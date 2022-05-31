@@ -1,78 +1,87 @@
-<div style={{margin:10, fontFamily:"Calibri", backgroundColor:"Thistle"}}>
+<div style={{ margin:"10", fontFamily:"Calibri", backgroundColor:"Thistle"}}>
 
 
-    <nav className="navbar  navbar-expand-sm container-fluid" style={{backgroundColor:"LavenderBlush"}}>
+    <nav className="navbar  navbar-expand-sm container-fluid"
+        style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"5"}}>
         <ul className="navbar-nav me-auto">
             <li className="navbar-item px-3"><b>Project IPS</b>, Lightstone Technologies</li>
         </ul>
         <ul className="navbar-nav ms-auto">
             <li className="navbar-item px-3">
-                < AiOutlineHome size={30} />
+                <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} // onMouseLeave={this.onMouseLeave}
+                    isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
+                    <DropdownToggle caret>
+                        < AiOutlineHome size={30} />
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem header>Submenu 1</DropdownItem>
+                        <DropdownItem>Submenu 1.1</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </li>
             <li className="navbar-item px-3">
-                < BsInfoCircle size={30} />
+                <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
+                    isOpen={this.state.dropdownOpen2} toggle={this.toggle2}>
+                    <DropdownToggle caret>
+                        < BsInfoCircle size={30} />
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem header>Submenu 1</DropdownItem>
+                        <DropdownItem>Submenu 1.1</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+
             </li>
             <li className="navbar-item px-3">
-                < BiPhoneCall size={30} />
+                <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
+                    isOpen={this.state.dropdownOpen3} toggle={this.toggle3}>
+                    <DropdownToggle caret>
+                        < BiPhoneCall size={30} />
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem header>Submenu 1</DropdownItem>
+                        <DropdownItem>Submenu 1.1</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
+
             </li>
             <li className="navbar-item px-3">
-                <Dropdown.Toggle>
-                    < GiHamburgerMenu size={30} />
-                </Dropdown.Toggle>
-                <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">
-                        Action
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
-                        Another action
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                        Something else
-                    </Dropdown.Item>
-                </Dropdown.Menu>
+                <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
+                    isOpen={this.state.dropdownOpen4} toggle={this.toggle4}>
+                    <DropdownToggle caret>
+                        < GiHamburgerMenu size={30} />
+                    </DropdownToggle>
+                    <DropdownMenu>
+                        <DropdownItem header>Submenu 1</DropdownItem>
+                        <DropdownItem>Submenu 1.1</DropdownItem>
+                    </DropdownMenu>
+                </Dropdown>
             </li>
         </ul>
     </nav>
 
 
-
-
-    <div className="video-container" style={{position:"absolute", display:"flex"}}>
-
-
+    <div className="video-container" style={{position:"absolute",zIndex:"0", display:"flex"}}>
         <div style={{marginLeft:350, marginTop:200,padding:30, height:"max-height",zIndex:5, color:"white", borderRadius:"30",backgroundColor:"rgba(255,255,255,0.5)"}}
             id="overlay justify-content-center align-content-stretch">
             <h1 style={{textAlign:"center"}}><em><b>Project IPS,<br></br> Lightstone Technologies
                         Group</b></em></h1>
-
             <button type="button" class="btn btn-light " style={{marginLeft:180, align:"center"}}>
                 Know more
             </button>
-
         </div>
 
 
     </div>
-    <div>
-        <video autoplay="1" muted="1" loop="true"
-            style={{  right: 0, top: 0, minWidth:"100%",objectFit: "cover", height:"500px", overflowY:"hidden"}}>
+    <div style={{ zIndex:"0"}}>
+        <video autoPlay="1" muted="1" loop="true"
+            style={{  zIndex:"0", right: 0, top: 0, minWidth:"100%",objectFit: "cover", height:"500px", overflowY:"hidden"}}>
             <source src="./images/video.mp4" type="video/mp4">
             </source>
         </video>
     </div>
 
-
-
-    {/* <iframe id="background-video" width="100%" height="500px"
-        src="https://youtube.com/embed/BBqfvwvftEo?modestbranding=1&amp;rel=0&amp;&showinfo=0" frameborder="0"
-        allowfullscreen>
-    </iframe> */}
-
-
-
     <br></br>
-
-
     <div style={{ backgroundColor:"rgba(100,0,0,0.5)"}}>
         <hr>
         </hr>
@@ -85,6 +94,12 @@
         </hr>
 
     </div>
+
+
+
+
+
+
 
     <Carousel>
         <Carousel.Item style={{height:"500px"}}>
@@ -229,7 +244,6 @@ overscrollBehaviorInline: "contain"}}>
             </ul>
         </nav>
     </div>
-
 
 
 </div>
