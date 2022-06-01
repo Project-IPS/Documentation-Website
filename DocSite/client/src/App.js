@@ -5,16 +5,13 @@ import {BiPhoneCall} from "react-icons/bi"
 import {BsInfoCircle} from "react-icons/bs"
 import {AiOutlineHome, AiOutlineFacebook, AiOutlineTwitter, AiOutlineLinkedin} from "react-icons/ai"
 import {Nav, Navbar, NavDropdown, Container} from 'react-bootstrap'
-import {
-    Dropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
-  } from "reactstrap";
-
+import {Dropdown,DropdownToggle,DropdownMenu,DropdownItem} from "reactstrap";
 import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import axios from "axios";
+import ContactUs from './ContactUs.js';
+import { BrowserRouter,Link, Route, Switch } from 'react-router-dom';
+
 
 
 
@@ -35,6 +32,7 @@ export default class App extends React.Component{
           dropdownOpen2: false,
           dropdownOpen3: false,
           dropdownOpen4: false,
+          testimonial:[]
         };
       }
     
@@ -67,12 +65,30 @@ export default class App extends React.Component{
     //   onMouseLeave() {
     //     this.setState({ dropdownOpen: false });
     //   }
+
+    componentDidMount() {
+  
+        let data ;
+  
+        axios.get('http://localhost:8000/api/testimonial/')
+        .then(res => {
+            data = res.data;
+            this.setState({
+                testimonial : data    
+            });
+        })
+        .catch(err => {})
+    }
+  
+
    render()
    {
     return(
         <div style={{ margin:"10", fontFamily:"Calibri", backgroundColor:"Thistle"}}>
 
+    {this.state.testimonial.map((testimonial, id) =>  (
 
+<div key={id}>
         <nav className="navbar  navbar-expand-sm container-fluid"
             style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"5"}}>
             <ul className="navbar-nav me-auto">
@@ -111,7 +127,10 @@ export default class App extends React.Component{
                             < BiPhoneCall size={30} />
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem ><a href="#" style={{textDecoration:"none"}}>Contact Us</a></DropdownItem>
+                            {/* <DropdownItem ><a href="" style={{textDecoration:"none"}}>Contact Us</a></DropdownItem> */}
+                            <DropdownItem ><a href="./contactUs">Contact Us</a></DropdownItem>
+                            
+                            
                         </DropdownMenu>
                     </Dropdown>
     
@@ -145,9 +164,8 @@ export default class App extends React.Component{
                     Know more
                 </button>
             </div>
-    
-    
         </div>
+
         <div style={{ zIndex:"0"}}>
             <video autoPlay="1" muted="1" loop="true"
                 style={{  zIndex:"0", right: 0, top: 0, minWidth:"100%",objectFit: "cover", height:"500px", overflowY:"hidden"}}>
@@ -208,30 +226,33 @@ export default class App extends React.Component{
         <h4>What our customers have to say about us:</h4>
         <br></br>
         <nav className="navbar  bg-light navbar-expand-sm container-fluid">
+       
             <ul className="navbar-nav me-auto" style={{ display: "grid",
     gridAutoFlow: "column",
     overflowX: "auto",
     overscrollBehaviorInline: "contain"}}>
+        
                 <li className="navbar-item px-1" style={{loading:"lazy"}}>
                     <Card style={{ width: '18rem', height:'10rem', backgroundColor:"rgba(100,0,0,0.5)" }}>
     
                         <Card.Body style={{scrollbarWidth:"none"}}>
-                            <Card.Title style={{color:"white"}}>Name</Card.Title>
+                            <Card.Title style={{color:"white"}}>{testimonial.firstName}  {testimonial.lastName}</Card.Title>
                             <Card.Text style={{color:"white"}}>
-                                Sample text
+                                {testimonial.testimonial}
                             </Card.Text>
                             {/* <Button variant="primary">Go somewhere</Button> */}
                         </Card.Body>
                     </Card>
                 </li>
-    
+        
+        
                 <li className="navbar-item px-1">
                     <Card style={{ width: '18rem', height:'10rem', backgroundColor:"rgba(100,0,0,0.5)" }}>
     
                         <Card.Body style={{scrollbarWidth:"none"}}>
-                            <Card.Title style={{color:"white"}}>Name</Card.Title>
+                            <Card.Title style={{color:"white"}}>{testimonial.firstName} {testimonial.lastName}</Card.Title>
                             <Card.Text style={{color:"white"}}>
-                                Sample text
+                            {testimonial.testimonial}
                             </Card.Text>
                             {/* <Button variant="primary">Go somewhere</Button> */}
                         </Card.Body>
@@ -273,6 +294,7 @@ export default class App extends React.Component{
                         </Card.Body>
                     </Card>
                 </li>
+        
             </ul>
         </nav>
         <br></br>
@@ -319,11 +341,12 @@ export default class App extends React.Component{
                 </ul>
             </nav>
         </div>
-    
-    
+    </div>
+    )
+    )}
     </div> 
     
-    )
+    );
   }
 }
   
