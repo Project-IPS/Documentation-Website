@@ -8,5 +8,11 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.testimonial
+    
+class formData(models.Model):
+    name=models.CharField(max_length=64, default="Anonymous")
+
+    def __str__(self):
+        return self.name
 
 # Create your models here.

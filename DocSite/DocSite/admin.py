@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Testimonial
+from .models import formData
 
-# class docsiteAdmin(admin.ModelAdmin):
-#     list_display= ('firstName','lastName','testimonial')
+class formDataAdmin(admin.ModelAdmin):
+     list_display= ('name')
 
 # Register your models here.
 
-admin.site.register(Testimonial)
+admin.site.register(formData)

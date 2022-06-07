@@ -9,6 +9,7 @@ import {Dropdown,DropdownToggle,DropdownMenu,DropdownItem} from "reactstrap";
 import Carousel from 'react-bootstrap/Carousel'
 import Card from 'react-bootstrap/Card'
 import axios from "axios";
+
 import ContactUs from './ContactUs.js';
 import { BrowserRouter,Link, Route, Switch } from 'react-router-dom';
 
@@ -25,6 +26,8 @@ export default class App extends React.Component{
         this.toggle2 = this.toggle2.bind(this);
         this.toggle3 = this.toggle3.bind(this);
         this.toggle4=this.toggle4.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         // this.onMouseEnter = this.onMouseEnter.bind(this); 
         // this.onMouseLeave = this.onMouseLeave.bind(this);
         this.state = {
@@ -32,7 +35,8 @@ export default class App extends React.Component{
           dropdownOpen2: false,
           dropdownOpen3: false,
           dropdownOpen4: false,
-          testimonial:[]
+          testimonial:[],
+          value: ''
         };
       }
     
@@ -57,6 +61,87 @@ export default class App extends React.Component{
           dropdownOpen4: !prevState.dropdownOpen4
         }));
       }
+      componentDidMount() {
+        let data;
+  
+        axios
+            .get("http://127.0.0.1:8000/api/formData")
+            .then((res) => {
+                data = res.data;
+                this.setState({
+                    details: data,
+                });
+            })
+            .catch((err) => {});
+    }
+      handleChange(event) {
+        this.setState({[event.target.name]: event.target.value});
+      }
+      handleGet(event) {
+  
+        event.preventDefault();
+        let data =event.target.data;
+  
+        axios.get('http://localhost:8000/api/formData')
+        .then(res => {
+            
+            this.setState({
+                value : data   
+            });
+        })
+        .catch(err => {})
+    }
+    
+      handleSubmit(event) {
+        alert('A name was submitted: ' + this.state.value);
+        event.preventDefault();
+        console.log(this.state.value);
+
+
+        axios.post('http://127.0.0.1:8000/api/formData',
+        {
+            name : this.state.value,
+        },
+        {
+            headers:{
+                "Content-Type":"application/json"
+            },
+        }
+        )
+        .then(res => {
+            this.setState({ name:"" });
+        })
+        .catch(error => console.err(error))
+
+
+        // axios({
+        //     method: 'post',
+        //     url: 'http://127.0.0.1:8000/api/formData',
+        //     data: {
+        //     'name':this.state.value,
+        //     }
+        // })
+        // .then(function (response) {
+        //     console.log(response);
+        // })
+        // .catch(function (error) {
+        //     console.log(error);
+        // });
+        
+        // fetch("http://localhost:8000/api/formData",
+        // {
+        //   method: "POST",
+        //   cache: "no-cache",
+        //   headers: {
+        //     "Content-Type": "application/json"
+        //   },
+        //   body: JSON.stringify(this.state.value),
+        // })
+        // .then(res => res.json())
+        // .catch(error => console.err(error))
+        
+
+      }
     
     //   onMouseEnter() {
     //       console.log("pressed");
@@ -66,19 +151,11 @@ export default class App extends React.Component{
     //     this.setState({ dropdownOpen: false });
     //   }
 
-    componentDidMount() {
+    
   
-        let data ;
+        
   
-        axios.get('http://localhost:8000/api/testimonial/')
-        .then(res => {
-            data = res.data;
-            this.setState({
-                testimonial : data    
-            });
-        })
-        .catch(err => {})
-    }
+        
   
 
    render()
@@ -86,9 +163,25 @@ export default class App extends React.Component{
     return(
         <div style={{ margin:"10", fontFamily:"Calibri", backgroundColor:"Thistle"}}>
 
-    {this.state.testimonial.map((testimonial, id) =>  (
+        {/* <div>
+            
+            
+            <div >
+                  <div >
+                        <h1>bro</h1>
+                        <button onSubmit= {this.handleGet} >GET</button>
+                        <footer >--- by
+                        <cite title="Source Title">
+                         hi</cite>
+                        </footer>
+                  </div>
+            
+            </div>
+            
+        </div> */}
+    
 
-<div key={id}>
+
         <nav className="navbar  navbar-expand-sm container-fluid"
             style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"5"}}>
             <ul className="navbar-nav me-auto">
@@ -128,7 +221,7 @@ export default class App extends React.Component{
                         </DropdownToggle>
                         <DropdownMenu>
                             {/* <DropdownItem ><a href="" style={{textDecoration:"none"}}>Contact Us</a></DropdownItem> */}
-                            <DropdownItem ><a href="./contactUs">Contact Us</a></DropdownItem>
+                            <DropdownItem >Contact Us</DropdownItem>
                             
                             
                         </DropdownMenu>
@@ -139,10 +232,10 @@ export default class App extends React.Component{
                     
                     <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
                         isOpen={this.state.dropdownOpen4} toggle={this.toggle4}>
-                        <DropdownToggle caret>
+                        <DropdownToggle caret drop="end">
                             < GiHamburgerMenu size={30} />
                         </DropdownToggle>
-                        <DropdownMenu>
+                        <DropdownMenu drop="end">
                             <DropdownItem header>Our Solutions</DropdownItem>
                             <DropdownItem><a href="#" style={{textDecoration:"none"}}>Products</a></DropdownItem>
                             <DropdownItem ><a href="#" style={{textDecoration:"none"}}>Request Demo</a></DropdownItem>
@@ -189,6 +282,13 @@ export default class App extends React.Component{
         </div>
     
     
+        <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input name='value' type="text" value={this.state.value} onChange={this.handleChange}  placeholder="Enter your name"/>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     
     
     
@@ -236,9 +336,9 @@ export default class App extends React.Component{
                     <Card style={{ width: '18rem', height:'10rem', backgroundColor:"rgba(100,0,0,0.5)" }}>
     
                         <Card.Body style={{scrollbarWidth:"none"}}>
-                            <Card.Title style={{color:"white"}}>{testimonial.firstName}  {testimonial.lastName}</Card.Title>
+                            <Card.Title style={{color:"white"}}>sample name</Card.Title>
                             <Card.Text style={{color:"white"}}>
-                                {testimonial.testimonial}
+                                sample text
                             </Card.Text>
                             {/* <Button variant="primary">Go somewhere</Button> */}
                         </Card.Body>
@@ -250,9 +350,9 @@ export default class App extends React.Component{
                     <Card style={{ width: '18rem', height:'10rem', backgroundColor:"rgba(100,0,0,0.5)" }}>
     
                         <Card.Body style={{scrollbarWidth:"none"}}>
-                            <Card.Title style={{color:"white"}}>{testimonial.firstName} {testimonial.lastName}</Card.Title>
+                            <Card.Title style={{color:"white"}}>sample name</Card.Title>
                             <Card.Text style={{color:"white"}}>
-                            {testimonial.testimonial}
+                            sample text
                             </Card.Text>
                             {/* <Button variant="primary">Go somewhere</Button> */}
                         </Card.Body>
@@ -342,9 +442,9 @@ export default class App extends React.Component{
             </nav>
         </div>
     </div>
-    )
-    )}
-    </div> 
+    
+    
+    
     
     );
   }
