@@ -15,4 +15,34 @@ class formData(models.Model):
     def __str__(self):
         return self.name
 
+class Blogs(models.Model):
+    title=models.CharField(max_length=100)
+    description=models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.title
+
+class contactDetails(models.Model):
+    firstName=models.CharField(max_length=100)
+    lastName=models.CharField(max_length=100)
+    email=models.EmailField(max_length=100)
+    contactNumber=models.CharField(max_length=10)
+    companyName=models.CharField(max_length=100)
+    companyType=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.firstName
+
+class careers(models.Model):
+    positionName=models.CharField(max_length=100)
+    techstack=models.CharField(max_length=100)
+    location=models.CharField(max_length=100)
+    duration=models.CharField(max_length=10)
+    qualification1=models.CharField(max_length=1000)
+    qualification2=models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.positionName
+
+
 # Create your models here.

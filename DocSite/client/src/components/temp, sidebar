@@ -1,0 +1,407 @@
+<devsite-book-nav scrollbars="" fixed="" style="top: 121px; max-height: 488px; --devsite-js-book-nav-y-offset:0px;">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter">
+  <input type="text" placeholder="Filter" aria-label="Type to filter" role="searchbox" />
+  
+  <span class="filter-clear-button hidden" data-title="Clear filter" aria-label="Clear filter" role="button" tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button" id="devsite-close-nav" class="devsite-header-icon-button button-flat material-icons gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Close navigation" aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event" data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav" track-name="androidDevelopers" track-metadata-position="nav" track-metadata-eventdetail="nav">
+
+  
+   
+
+</a>
+
+
+  
+      <span class="devsite-product-name">
+        
+        
+        <ul class="devsite-breadcrumb-list">
+  
+  <li class="devsite-breadcrumb-item
+             ">
+    
+    
+    
+      
+      
+    
+  </li>
+  
+</ul>
+      </span>
+    
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+            <li class="devsite-nav-item">
+              
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Platform
+   </span>
+    
+  
+ 
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Android Studio
+   </span>
+    
+  
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Google Play
+   </span>
+    
+  
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Jetpack
+   </span>
+    
+  
+  
+  
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+ 
+    <span class="devsite-nav-text" tooltip="">
+      Kotlin
+   </span>
+ 
+
+  
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+
+  
+    <span class="devsite-nav-text" tooltip="">
+      Docs
+   </span>
+  
+  
+
+  
+              
+                <ul class="devsite-nav-responsive-tabs">
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Overview
+   </span>
+  
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Guides
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+ 
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+  
+  
+    <span class="devsite-nav-text" tooltip="" menu="_book">
+      Reference
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward" menu="_book">
+    </span>
+    
+  
+  
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Samples
+   </span>
+ 
+  
+
+  
+                    </li>
+                  
+                    
+                    
+                    
+                    <li class="devsite-nav-item">
+                      
+
+  
+    <span class="devsite-nav-text" tooltip="">
+      Design &amp; Quality
+   </span>
+    
+    <span class="devsite-nav-icon material-icons" data-icon="forward">
+    </span>
+    
+  
+
+  
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li class="devsite-nav-item">
+              
+  
+ 
+  
+    <span class="devsite-nav-text" tooltip="">
+      Games
+   </span>
+ 
+
+  
+              
+            </li>
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+      <div class="devsite-mobile-nav-bottom" role="navigation">
+        
+          
+          <ul class="devsite-nav-list" menu="_book">
+            <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Android API Reference</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Overview</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Android Platform</span></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Jetpack</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">AndroidX</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Jetpack Compose</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">AndroidX Test</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Constraint Layout</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Constraint Layout in Compose</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Databinding Library</span></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Device Libraries</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Android Automotive Library</span></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Other Libraries</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Android Gradle Plugin</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Material Components</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Android NDK</span></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Google Play</span>
+      </div></li>
+
+  <li class="devsite-nav-item"> <span class="devsite-nav-text" tooltip="">Billing Library</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Core Library (Java)</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Core Library (Native)</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Core Library (Unity)</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Install Referrer Library</span></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Google Assistant</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">App Actions</span></li>
+
+  <li class="devsite-nav-item
+           devsite-nav-heading"><div class="devsite-nav-title devsite-nav-title-no-path">
+        <span class="devsite-nav-text" tooltip="">Deprecated Libraries</span>
+      </div></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Android Support Library</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Test Support Library</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Architecture Components (android.<wbr/>arch)</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">ConstraintLayout Support Library</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Android Things Library</span></li>
+
+  <li class="devsite-nav-item"><span class="devsite-nav-text" tooltip="">Wearable Library</span></li>
+          </ul>
+        
+        
+          
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+        
+        
+          
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+        
+      </div>
+    
+  </div>
+</nav>
+        
+      </devsite-book-nav>

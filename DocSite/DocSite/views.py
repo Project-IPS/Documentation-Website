@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from rest_framework.views import APIView 
-from .models import formData
-from .serializers import formDataSerializer
+from .models import formData, Blogs, contactDetails, careers
+from .serializers import formDataSerializer, blogSerializer, contactDetailsSerializer, careersSerializer
 from rest_framework import viewsets,permissions
 from rest_framework.response import Response
 from django.http import HttpResponse
@@ -29,6 +29,19 @@ class formDataView(viewsets.ModelViewSet):
         if serializer.is_valid(raise_exceptions=True):
             serializer.save()
             return Response(serializer.data)
+
+class BlogsViewSet(viewsets.ModelViewSet):
+    queryset=Blogs.objects.all().order_by('title')
+    serializer_class=blogSerializer
+
+
+class contactDetailsViewSet(viewsets.ModelViewSet):
+    queryset=contactDetails.objects.all()
+    serializer_class=contactDetailsSerializer
+
+class careersViewSet(viewsets.ModelViewSet):
+    queryset=careers.objects.all()
+    serializer_class=careersSerializer
 
 # class formDataView(APIView):
 #     serializer_class = formDataSerializer
