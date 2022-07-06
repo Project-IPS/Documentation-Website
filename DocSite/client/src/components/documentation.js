@@ -140,20 +140,22 @@ const SidebarItem = styled.div`
 
 
     <div>
-    <nav className="navbar  navbar-expand-sm container-fluid"
+        <nav className="navbar  navbar-expand-sm container-fluid"
             style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"5"}}>
             <ul className="navbar-nav me-auto">
                 <li className="navbar-item px-3"><b>Project IPS</b>, Lightstone Technologies</li>
             </ul>
             <ul className="navbar-nav ms-auto">
                 <li className="navbar-item px-3">
-                    <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} // onMouseLeave={this.onMouseLeave}
-                        isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
+                    <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} //
+                        onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen1} toggle={this.toggle1}>
                         <DropdownToggle caret>
                             < AiOutlineHome size={30} />
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem ><Link to="/" style={{textDecoration:"none"}}>Home</Link></DropdownItem>
+                            <DropdownItem>
+                                <Link to="/" style={{textDecoration:"none"}}>Home</Link>
+                            </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
                 </li>
@@ -164,12 +166,14 @@ const SidebarItem = styled.div`
                             < BsInfoCircle size={30} />
                         </DropdownToggle>
                         <DropdownMenu>
-                            <DropdownItem ><Link to="/about" style={{textDecoration:"none"}}>About</Link></DropdownItem>
+                            <DropdownItem>
+                                <Link to="/about" style={{textDecoration:"none"}}>About</Link>
+                            </DropdownItem>
                             {/* <DropdownItem><a href="#" style={{textDecoration:"none"}}>The Company</a></DropdownItem>
                             <DropdownItem><a href="#" style={{textDecoration:"none"}}>Team</a></DropdownItem> */}
                         </DropdownMenu>
                     </Dropdown>
-    
+
                 </li>
                 <li className="navbar-item px-3">
                     <Dropdown className="d-inline" // onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
@@ -178,34 +182,45 @@ const SidebarItem = styled.div`
                             < BiPhoneCall size={30} />
                         </DropdownToggle>
                         <DropdownMenu>
-                            {/* <DropdownItem ><a href="" style={{textDecoration:"none"}}>Contact Us</a></DropdownItem> */}
-                            <DropdownItem ><Link to="/contactUs" style={{textDecoration:"none"}}>Contact Us</Link></DropdownItem>
-                            
-                            
+                            {/* <DropdownItem><a href="" style={{textDecoration:"none"}}>Contact Us</a></DropdownItem>
+                            */}
+                            <DropdownItem>
+                                <Link to="/contactUs" style={{textDecoration:"none"}}>Contact Us</Link>
+                            </DropdownItem>
+
+
                         </DropdownMenu>
                     </Dropdown>
-    
+
                 </li>
                 <li className="navbar-item px-3">
-                    
-                    <Dropdown className="d-inline ml-auto" // onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-                        isOpen={this.state.dropdownOpen4} toggle={this.toggle4} drop="end">
+
+                    <Dropdown className="d-inline ml-auto" // onMouseOver={this.onMouseEnter}
+                        onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen4} toggle={this.toggle4}
+                        drop="end">
                         <DropdownToggle caret drop="end">
                             < GiHamburgerMenu size={30} />
                         </DropdownToggle>
                         <DropdownMenu drop="end" className="me-auto">
                             {/* <DropdownItem header>Our Solutions</DropdownItem>
                             <DropdownItem><a href="#" style={{textDecoration:"none"}}>Products</a></DropdownItem>
-                            <DropdownItem ><a href="#" style={{textDecoration:"none"}}>Request Demo</a></DropdownItem> */}
+                            <DropdownItem><a href="#" style={{textDecoration:"none"}}>Request Demo</a></DropdownItem>
+                            */}
                             <DropdownItem header>Documentation</DropdownItem>
-                            <DropdownItem ><Link to="/documentation"  style={{textDecoration:"none"}}>Documentation</Link></DropdownItem>
+                            <DropdownItem>
+                                <Link to="/documentation" style={{textDecoration:"none"}}>Documentation</Link>
+                            </DropdownItem>
                             <DropdownItem header>Blogs</DropdownItem>
-                            <DropdownItem ><Link to="/blogs" style={{textDecoration:"none"}}>Blogs</Link></DropdownItem>
+                            <DropdownItem>
+                                <Link to="/blogs" style={{textDecoration:"none"}}>Blogs</Link>
+                            </DropdownItem>
                             <DropdownItem header>Contribute</DropdownItem>
-                            <DropdownItem ><Link to="/careers" style={{textDecoration:"none"}}>Careers</Link></DropdownItem>
+                            <DropdownItem>
+                                <Link to="/careers" style={{textDecoration:"none"}}>Careers</Link>
+                            </DropdownItem>
                         </DropdownMenu>
                     </Dropdown>
-                    
+
                 </li>
             </ul>
         </nav>
@@ -215,28 +230,30 @@ const SidebarItem = styled.div`
     <br></br>
     <br></br>
     <nav className="navbar  navbar-expand-sm container-fluid"
-            style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"0"}}>
-            <ul className="navbar-nav me-auto">
-            
-                <li className="navbar-item px-3">
-</li>
-                <li className="navbar-item px-3"><div style={{paddingLeft:20}}>
-    <h1>Documentation</h1>
-    </div></li>
-    </ul>
+        style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"0"}}>
+        <ul className="navbar-nav me-auto">
+
+            <li className="navbar-item px-3">
+            </li>
+            <li className="navbar-item px-3">
+                <div style={{paddingLeft:20}}>
+                    <h1>Documentation</h1>
+                </div>
+            </li>
+        </ul>
     </nav>
     <div>
-    
+
     </div>
     <div style={{paddingLeft:275, paddingTop:100}}>
 
-    
-    <nav className="navbar  navbar-expand-sm container-fluid"
+
+        <nav className="navbar  navbar-expand-sm container-fluid"
             style={{backgroundColor:"LavenderBlush",position:"fixed", zIndex:"0"}}>
             <ul className="navbar-nav me-auto">
                 <li className="navbar-item">
-    <Card style={{ width: '20rem', height:'20rem' }}>
-    
+                    <Card style={{ width: '20rem', height:'20rem' }}>
+
                         <Card.Body style={{scrollbarWidth:"none"}}>
                             <Card.Title style={{color:"Black"}}>Get started with Algorithms</Card.Title>
                             <Card.Subtitle>subtitle</Card.Subtitle>
@@ -244,13 +261,13 @@ const SidebarItem = styled.div`
                             <Card.Text style={{color:"black"}}>
                                 <Link to="/documentation/algorithms"> Link 1 </Link>
                             </Card.Text>
-                            
+
                         </Card.Body>
                     </Card>
-                    </li>
-                    <li className="navbar-item px-1">
-    <Card style={{ width: '20rem', height:'20rem' }}>
-    
+                </li>
+                <li className="navbar-item px-1">
+                    <Card style={{ width: '20rem', height:'20rem' }}>
+
                         <Card.Body style={{scrollbarWidth:"none"}}>
                             <Card.Title style={{color:"Black"}}>Get started with Android framework</Card.Title>
                             <Card.Subtitle>subtitle</Card.Subtitle>
@@ -258,13 +275,13 @@ const SidebarItem = styled.div`
                             <Card.Text style={{color:"black"}}>
                                 <Link to="/documentation/android"> Link 1 </Link>
                             </Card.Text>
-                            
+
                         </Card.Body>
                     </Card>
-                    </li>
-                    <li className="navbar-item">
-    <Card style={{ width: '20rem', height:'20rem' }}>
-    
+                </li>
+                <li className="navbar-item">
+                    <Card style={{ width: '20rem', height:'20rem' }}>
+
                         <Card.Body style={{scrollbarWidth:"none"}}>
                             <Card.Title style={{color:"Black"}}>Get started with C++ framework</Card.Title>
                             <Card.Subtitle>subtitle</Card.Subtitle>
@@ -272,42 +289,41 @@ const SidebarItem = styled.div`
                             <Card.Text style={{color:"black"}}>
                                 <Link to="/documentation/cpp"> Link 1 </Link>
                             </Card.Text>
-                            
+
                         </Card.Body>
                     </Card>
-                    </li>
-                    
-                    </ul>
-                    </nav>
-                    </div>
+                </li>
 
-                    <div style={{display:"flex"}}>
-                    <SidebarParent>
-                <div style={{position: 'fixed'}}>
-                    {
-                        SidebarItems.map((item, index)=> {
-                            const bgcolor= item.background;
-                            return (
-                                <div style={{ backgroundColor: bgcolor }}>
-                                <Link to={item.route}>
-                                     <SidebarItem 
-                                    key={item.name}  >
-                                        <div style={{ backgroundColor: `{item.background}` }} >
-                                        {item.name}
-                                        </div>
-                                    </SidebarItem>
-                                 </Link>
-                                 </div>
-                            );
-                        })
-                    }
+            </ul>
+        </nav>
+    </div>
 
+    <div style={{display:"flex"}}>
+        <SidebarParent>
+            <div style={{position: 'fixed'}}>
+                {
+                SidebarItems.map((item, index)=> {
+                const bgcolor= item.background;
+                return (
+                <div style={{ backgroundColor: bgcolor }}>
+                    <Link to={item.route}>
+                    <SidebarItem key={item.name}>
+                        <div style={{ backgroundColor: `{item.background}` }}>
+                            {item.name}
+                        </div>
+                    </SidebarItem>
+                    </Link>
                 </div>
-                <div className="behind-the-scenes"/>
-            </SidebarParent>
+                );
+                })
+                }
+
+            </div>
+            <div className="behind-the-scenes" />
+        </SidebarParent>
     </div>
 
-    </div>
+</div>
     );
     }
 }
